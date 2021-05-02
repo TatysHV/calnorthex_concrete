@@ -1,0 +1,43 @@
+@mixin reset-list
+	margin: 0
+	padding: 0
+	list-style: none
+
+@mixin horizontal-list
+	@include reset-list
+
+	li
+		display: inline-block
+		margin:
+				left: -2px
+				right: 1em
+
+@mixin gradient($direction, $list)
+	background: -webkit-linear-gradient($direction, $list)
+	background: -moz-linear-gradient($direction, $list)
+	background: -o-linear-gradient($direction, $list)
+	background: linear-gradient($direction, $list)
+
+@mixin tablet
+	@media only screen and (min-width: 600px)
+		@content
+
+@mixin laptop
+	@media only screen and (min-width: 960px)
+		@content
+
+@mixin ipad-retina-portrait
+	@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 2)
+		@content
+
+@mixin ipad-retina-landscape
+	@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 2)
+		@content
+
+@mixin desktop
+	@media only screen and (min-width: 1264px)
+		@content
+
+@mixin large
+	@media only screen and (min-width: 1904px)
+		@content

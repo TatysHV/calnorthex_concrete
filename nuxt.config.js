@@ -4,7 +4,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - nuxt_template',
-    title: 'nuxt_template',
+    title: 'Calnorthex Concrete',
     htmlAttrs: {
       lang: 'en'
     },
@@ -14,7 +14,8 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap' }
     ]
   },
 
@@ -24,7 +25,7 @@ export default {
   of your routes and put it inside of its own file in the dist/ directory. This improves performance as well
   as SEO and better offline support.
   */
-
+  mode: 'spa',
   target: 'static',
 
   build: {
@@ -70,7 +71,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.sass'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,

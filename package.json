@@ -12,6 +12,7 @@
     "@nuxt/babel-preset-app": "^2.15.4",
     "@nuxtjs/style-resources": "^1.0.0",
     "core-js": "^3.9.1",
+    "eslint": "^7.25.0",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {

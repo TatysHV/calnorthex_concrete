@@ -1,0 +1,55 @@
+@import '~/assets/styles/variables'
+@import '~/assets/styles/mixins'
+@import '~/assets/styles/fonts'
+
+html.overflow-y-hidden
+	overflow: hidden!important
+	body 
+		overflow: hidden!important
+    
+body, .v-application
+	//font-family: $font-base
+	overflow-x: hidden
+	overflow-y: hidden
+	font-family: $font_base
+	font-size: 16px
+	color: #111
+.row
+	margin: 0
+	
+.v-main
+	background-color: #f8f9fe
+
+.container
+	height: 100% 
+	max-width: 1300px
+
+
+body.modal-open 
+	overflow: hidden
+
+img
+	width: 100%
+
+nav ul
+	@include horizontal-list
+
+button 
+	text-transform: none
+
+// input[type=number]::-webkit-inner-spin-button,
+// input[type=number]::-webkit-outer-spin-button 
+// 	-webkit-appearance: none
+// 	margin: 0
+
+// input[type="number"]::-webkit-inner-spin-button, 
+// input[type="number"]::-webkit-outer-spin-button 
+// 	-webkit-appearance: none!important
+// 	margin: 0
+
+input[type="number"] 
+	-moz-appearance: textfield!important
+
+input[type="number"]:hover,
+input[type="number"]:focus 
+	-moz-appearance: number-input
