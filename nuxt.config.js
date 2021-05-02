@@ -18,9 +18,35 @@ export default {
     ]
   },
 
+  /* STATIC HOSTING
+  Statically render your Nuxt.js application and get all of the benefits of a universal app without a server. 
+  The nuxt generate command will generate a static version of your website. It will generate HTML for every one 
+  of your routes and put it inside of its own file in the dist/ directory. This improves performance as well
+  as SEO and better offline support.
+  */
+
+  target: 'static',
+
+  build: {
+    babel: {
+      presets({ envName }) {
+        const envTargets = {
+          loose: true
+        }
+        return [
+          [ "@nuxt/babel-preset-app", { targets: envTargets[envName]}]
+        ]
+      }
+    }
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/styles/main.sass'
   ],
+
+  styleResources: {
+    sass: ['./assets/styles/*.sass']
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -37,11 +63,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/style-resources',
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ['~/assets/variables.sass'],
     theme: {
       dark: true,
       themes: {

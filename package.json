@@ -9,10 +9,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxt/babel-preset-app": "^2.15.4",
+    "@nuxtjs/style-resources": "^1.0.0",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.11.3"
+    "@nuxtjs/vuetify": "^1.11.3",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1"
   }
 }
