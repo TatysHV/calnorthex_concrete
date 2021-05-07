@@ -1,35 +1,11 @@
 <template>
   <v-app dark>
     <Header :nav-items="items" @handlerSidebar="showSidebar()"/>
-    <Sidebar :nav-items="items" :showSidebar="activeSidebar"/>
+    <Sidebar :nav-items="items" :showSidebar="activeSidebar" @close="closeSidebar"/>
 
     <v-main class="pa-0">
       <nuxt />
     </v-main>
-
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      color="#000"
-      right
-      temporary
-      fixed
-      app
-
-    >
-      <v-list 
-        dense nav
-      >
-        <v-list-item  
-          v-for="item in items"
-          :key="item.title"
-          link>
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
 
     <v-footer
     class="mt-5"
@@ -58,11 +34,11 @@ export default {
       title: 'Qué ver',
       //logoCinepolis: require('~/assets/images/lg-cinepolis-new.png'),
       items: [
-          { title: 'Home', id: 'home' },
-          { title: 'Gallery', id: 'gallery' },
-          { title: 'Services', id: 'services' },
-					{ title: 'About us', id: 'about' },
-					{ title: 'Contact', id: 'contact' }
+          { title: 'Home', id: '#home' },
+          { title: 'Gallery', id: '#gallery' },
+          { title: 'Services', id: '#services' },
+					{ title: 'About us', id: '#about' },
+					{ title: 'Contact', id: '#contact' }
       ],
       windowSize: {
         x: 0,
@@ -86,6 +62,9 @@ export default {
       },
       showSidebar(){
         this.activeSidebar = !this.activeSidebar
+      },
+      closeSidebar(){
+        this.activeSidebar = false
       }
   }
 }

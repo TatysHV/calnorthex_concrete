@@ -1,7 +1,7 @@
 <template>
 	<v-app-bar v-resize="onResize"
-		:height="windowSize.x < 960 ? '80px' : '100px'"
-		:max-height="windowSize.x < 960 ? '80px' : '100px'"
+		:height="windowSize.x < 960 ? '80px' : '85px'"
+		:max-height="windowSize.x < 960 ? '80px' : '85px'"
 		class="app-nav"
 		clipped-right
 		color="#000"
@@ -197,7 +197,9 @@ export default {
 			color: white
 		
 		.v-list-item__title
-			font-size: 1.1rem
+			font-size: .9rem
+			text-transform: uppercase
+			font-weight: 500
 
 	.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled)
 		color: rgb(255, 255 , 255 )!important

@@ -1,5 +1,5 @@
 <template>
-  <section class="main-banner">
+  <section class="main-banner" id="home">
     <div class="filter-layout"></div>
     <div class="info-banner">
       <h1>{{ title }}</h1> 
@@ -15,8 +15,8 @@ export default {
   name: 'MainBanner',
   data() {
     return {
-      title: 'Calnorthex Concrete',
-      description: 'Velit velit dolore mollit proident ea ipsum cupidatat nulla irure nisi ad sit minim sunt. Proident culpa eiusmod excepteur fugiat mollit minim in ullamco dolor enim in in. Veniam proident id dolore Lorem non officia deserunt quis. Commodo eiusmod aliquip anim duis qui nostrud labore elit aliqua ex et proident.',
+      title: 'CALNORTHEX CONCRETE',
+      description: 'Velit velit dolore mollit proident ea ipsum cupidatat nulla irure nisi ad sit minim sunt. Proident culpa eiusmod excepteur fugiat mollit minim in ullamco dolor enim in in.',
       ctaBtn: 'Show more',
     }
   },
@@ -32,7 +32,10 @@ export default {
 	width: 100% 
 	height: 70vh
 	animation: banner 20s infinite linear alternate
-	background-size: 100% 100% 
+	background-size: auto 100%
+	background-position: center
+	@include laptop
+		background-size: 100% 100% 
 
 	.filter-layout 
 		position: absolute 
@@ -44,19 +47,31 @@ export default {
 
 	.info-banner 
 		width: 100% 
-		max-width: 550px 
+		max-width: 350px 
 		text-align: center
 		z-index: 1
+		@include laptop 
+			max-width: 800px
+
 		h1
 			color: white 
-			font-size: 2rem 
+			font-size: 1rem 
 			margin-bottom: 20px 
 			letter-spacing: 1px
+			text-align: center
+			@include laptop
+				font-size: 2rem 
 
 		p 
-			color: #c7c7c7 
-			line-height: 1.7 
+			color: #c7c7c7
+			line-height: 1.2
 			margin-bottom: 30px
+			font-size: 1.3rem
+			font-weight: 500
+			text-align: justify
+			@include laptop 
+				font-size: 1.6rem
+				text-align: center
 
 		a 
 			color: white 
@@ -65,6 +80,8 @@ export default {
 			padding: 15px 35px 
 			display: inline-block
 			border-radius: 50px
+			font-weight: 500
+			text-align: center
 
 
 @keyframes banner 
