@@ -21,7 +21,7 @@
 							<p class="main-title mb-0">Calnorthex Concrete</p>
 							<v-spacer v-if="isMobile"></v-spacer>
 							<v-btn v-if="isMobile"
-								@click.stop="rightDrawer = !rightDrawer"
+								@click.stop="showSidebar()"
 								icon
 							>
 								<v-icon>mdi-menu</v-icon>
@@ -36,7 +36,7 @@
 									active-class="active"
 								>
 									<v-list-item 
-										v-for="(item, index) in items"
+										v-for="(item, index) in navItems"
 										:key="item.title"
 										link
 										:class="`menu-item item-${index}`"
@@ -51,7 +51,7 @@
               <v-list flat v-else>
 								<v-list-item-group>
 									<v-list-item 
-										v-for="item in items"
+										v-for="item in navItems"
 										:key="item.title"
 										link
 										@click="goHome()"
@@ -70,22 +70,23 @@
 <script>
 
 export default {
+	name: 'Header',
+	props: {
+    navItems: {
+      type: Array, 
+      default: [],
+      required: true
+    }
+	},
 	data(){
 		return {
 			drawer: false,
       fixed: false,
       miniVariant: false,
       right: true,
-      rightDrawer: false,
+      activeSidebar: false,
 			menuSelection: 0,
       //logoCinepolis: require('~/assets/images/lg-cinepolis-new.png'),
-      items: [
-          { title: 'Home', id: 'home' },
-          { title: 'Gallery', id: 'gallery' },
-          { title: 'Services', id: 'services' },
-					{ title: 'About us', id: 'about' },
-					{ title: 'Contact', id: 'contact' }
-      ],
 			windowSize: {
         x: 0,
         y: 0
@@ -125,6 +126,10 @@ export default {
 		},
 		goHome(){
 			this.$router.push('/')
+		},
+		showSidebar(){
+			this.activeSidebar = !this.activeSidebar
+			this.$emit('handlerSidebar', this.activeSidebar)
 		}
   }
 

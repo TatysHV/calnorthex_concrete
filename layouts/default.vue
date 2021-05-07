@@ -1,11 +1,10 @@
 <template>
   <v-app dark>
-    <Header/>
+    <Header :nav-items="items" @handlerSidebar="showSidebar()"/>
+    <Sidebar :nav-items="items" :showSidebar="activeSidebar"/>
 
     <v-main class="pa-0">
-      <v-container class="pa-0">
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-main>
 
     <v-navigation-drawer
@@ -41,22 +40,29 @@
 </template>
 
 <script>
-import Header from '~/components/Header'
+import Header from '~/components/Header/Header'
+import Sidebar from '~/components/Header/Sidebar'
 
 export default {
+  components: {
+    Header,
+    Sidebar
+  },
   data () {
     return {
       drawer: false,
       fixed: false,
       miniVariant: false,
       right: true,
-      rightDrawer: false,
+      activeSidebar: false,
       title: 'Qué ver',
       //logoCinepolis: require('~/assets/images/lg-cinepolis-new.png'),
       items: [
-          { title: 'VIDEOS', id: 'videos' },
-          { title: 'CRÍTICAS', id: 'criticas' },
-          { title: 'NOTICIAS', id: 'noticias' },
+          { title: 'Home', id: 'home' },
+          { title: 'Gallery', id: 'gallery' },
+          { title: 'Services', id: 'services' },
+					{ title: 'About us', id: 'about' },
+					{ title: 'Contact', id: 'contact' }
       ],
       windowSize: {
         x: 0,
@@ -64,9 +70,7 @@ export default {
       }
     }
   },
-  components: {
-    Header,
-  },
+
   mounted(){
     this.onResize
   },
@@ -79,6 +83,9 @@ export default {
       },
       goHome(){
         this.$router.push('/')
+      },
+      showSidebar(){
+        this.activeSidebar = !this.activeSidebar
       }
   }
 }
