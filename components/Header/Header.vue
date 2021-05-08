@@ -14,7 +14,7 @@
 						<v-row class="wrap-identity">
 							<nuxt-link to="/" >
 								<v-img contain 
-									:max-width="windowSize.x < 960 ? '120' : '200'" 
+									:max-width="windowSize.x < 960 ? '150' : '200'" 
 									src="../img-lg-calnorthex.png">
 								</v-img>
 							</nuxt-link>
@@ -90,7 +90,11 @@ export default {
 			windowSize: {
         x: 0,
         y: 0
-      }
+      },
+			styleColors: {
+				baseRed: '#9C171F',
+				baseGray: '#58585C'
+			}
 		}
 	},
 	mounted(){
@@ -207,6 +211,6 @@ export default {
 			color: $base-red !important
 
 	.theme--light.v-btn.v-btn--icon
-		color: white
+		color: $base-gray
 
 </style>

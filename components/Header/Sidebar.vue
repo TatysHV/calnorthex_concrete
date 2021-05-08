@@ -1,14 +1,14 @@
 <template>
   <v-navigation-drawer
     v-model="showSidebar"
-    color="#000"
+    color="#fff"
     right
     temporary
     fixed
     app
     >
     <div class="head-sidebar">
-      <v-btn @click="hideSidebar()" color="#000" dark><v-icon>mdi-close</v-icon></v-btn>
+      <v-btn @click="hideSidebar()" :color="styleColors.baseRed" flat icon ><v-icon>mdi-close</v-icon></v-btn>
     </div>
       <v-list dense nav>
         <v-list-item  
@@ -52,15 +52,21 @@ export default {
 	},
   data(){
     return{
-      hideSidebar(){
+				styleColors: {
+					baseRed: '#9C171F',
+					baseGray: '#58585C'
+				},
+    }
+  },
+	methods: {
+		hideSidebar(){
         this.$emit('close')
       },
 			goToSection(section){
 				this.$vuetify.goTo(section, this.options)
 				this.hideSidebar()
 			}
-    }
-  }
+	}
 }
 </script>
 
@@ -90,9 +96,11 @@ export default {
 		padding: 1rem
 
 .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled)
-	color: rgb(255, 255 , 255 )!important
+	color: $base-gray !important
+	&:hover
+		color: $base-red
 
 .theme--light.v-btn.v-btn--icon
-	color: white	
+	color: $base-red	
 
 </style>
