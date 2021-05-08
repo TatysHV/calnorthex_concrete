@@ -43,7 +43,7 @@ export default {
 		height: 100% 
 		top: 0
 		left: 0
-		background-color: rgb(0 34 47 / 45%)
+		background-color: rgb(40 0 0 / 45%)
 
 	.info-banner 
 		width: 100% 
@@ -63,7 +63,7 @@ export default {
 				font-size: 2rem 
 
 		p 
-			color: #c7c7c7
+			color: #fff
 			line-height: 1.2
 			margin-bottom: 30px
 			font-size: 1.3rem
@@ -76,7 +76,7 @@ export default {
 		a 
 			color: white 
 			text-decoration: none 
-			background-color: $base_red 
+			background-color: $base-red 
 			padding: 15px 35px 
 			display: inline-block
 			border-radius: 50px

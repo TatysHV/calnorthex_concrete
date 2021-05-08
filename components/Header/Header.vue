@@ -4,7 +4,7 @@
 		:max-height="windowSize.x < 960 ? '80px' : '85px'"
 		class="app-nav"
 		clipped-right
-		color="#000"
+		color="#fff"
 		dense
 		flat
     >
@@ -13,10 +13,10 @@
 					<v-col class="pa-0">
 						<v-row class="wrap-identity">
 							<nuxt-link to="/" >
-								<!--<v-img contain 
-									:max-width="windowSize.x < 960 ? '120' : '140'" 
-									:src="logoCinepolis">
-								</v-img>-->
+								<v-img contain 
+									:max-width="windowSize.x < 960 ? '120' : '200'" 
+									src="../img-lg-calnorthex.png">
+								</v-img>
 							</nuxt-link>
 							<p class="main-title mb-0">Calnorthex Concrete</p>
 							<v-spacer v-if="isMobile"></v-spacer>
@@ -138,11 +138,11 @@ export default {
 
 <style lang="sass">
 .app-nav
-	background-color: $base_black
 	.main-title
 		padding-top: 8px
 		color: white
 		font-size: 2rem
+		display: none
 	.main-nav 
 		display: flex 
 		flex-direction: row 
@@ -167,8 +167,8 @@ export default {
 		position: absolute 
 		left: 0
 		bottom: 0
-		background-color: $base_red
-		//background: linear-gradient(90deg, $base_yellow 0, $base_red)
+		//background-color: $base-red
+		background: linear-gradient(90deg, $base-gray 0, $base-red)
 
 	.menu
 		.v-list
@@ -183,26 +183,28 @@ export default {
 			display: flex
 			align-items: center
 			height: 100%
-			//text-transform: uppercase
 			.v-list-item
 				padding: 0 16px
 				text-decoration: none
 				min-width: 8.5rem
 				text-align: center
 				height: 100%
+				color: $base-gray
 				&:hover
-					background-color: $light_red
+					//background-color: $light-red
 		.menu-item.active 
-			background-color: $base_red
-			color: white
+			color: $base-red
+			//background-color: $base-red
 		
 		.v-list-item__title
-			font-size: .9rem
-			text-transform: uppercase
+			font-size: 1rem
 			font-weight: 500
+			//text-transform: uppercase
 
 	.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled)
-		color: rgb(255, 255 , 255 )!important
+		color: $base-gray !important
+		&:hover 
+			color: $base-red !important
 
 	.theme--light.v-btn.v-btn--icon
 		color: white
