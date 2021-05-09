@@ -6,18 +6,15 @@
     <v-main class="pa-0">
       <nuxt />
     </v-main>
+    <Footer :nav-items="items"/>
 
-    <v-footer
-    class="mt-5"
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
 import Header from '~/components/Header/Header'
 import Sidebar from '~/components/Header/Sidebar'
+import Footer from '~/components/Footer'
 
 export default {
   components: {

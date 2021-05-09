@@ -140,7 +140,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .app-nav
 	.main-title
 		padding-top: 8px

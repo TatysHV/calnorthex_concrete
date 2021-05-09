@@ -9,11 +9,12 @@
           Velit elit ad consequat nulla id adipisicing quis dolor. Anim sunt nostrud ex aliqua id enim officia. Veniam laboris occaecat incididunt ut commodo Lorem nisi tempor deserunt ullamco dolore magna. Ipsum Lorem non labore quis incididunt. Consectetur voluptate nulla tempor amet magna minim aliqua.
         </p>
 				<div class="squares">
-					<div class="square-gray"></div>
 					<div class="square-red"></div>
+					<div class="square-gray"></div>
 				</div>
       </v-col >
       <v-col class="complement pa-0">
+				<div class="bg-portrait"></div>
       </v-col>
     </div>
   </section>
@@ -47,13 +48,30 @@ export default {
 			color: $base-red
 
 	.complement  
+		position: relative
 		width: 100%
 		padding: 1rem
 		min-height: 600px 
-		background: url('../assets/images/splash02.jpg')
-		background-size: cover 
-		background-position: center
-
+		.bg-portrait
+			position: relative
+			width: 90%
+			height: 95%
+			margin: auto
+			background: url('../assets/images/splash02.jpg')
+			background-size: cover 
+			background-position: center
+			z-index: 9
+		&:before
+			content:''
+			width: 90%
+			height: 95%
+			margin: auto
+			z-index: 1
+			position: absolute
+			background-color: $base-red 
+			right: 0px
+			bottom: 0px
+			
 	.squares 
 		position: relative
 		display: flex 
@@ -73,14 +91,14 @@ export default {
 			height: 50px 
 			border: 5px solid $base-red 
 			transform: rotate(45deg)
-			left: calc(50% - 10px)
+			right: calc(50% - 10px)
 		.square-gray
 			position: absolute 
 			width: 50px
 			height: 50px 
 			border: 5px solid $base-gray
 			transform: rotate(45deg)
-			right: calc(50% - 10px)
+			left: calc(50% - 10px)
 			z-index: 2
 
 </style>

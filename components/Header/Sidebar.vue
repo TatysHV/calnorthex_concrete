@@ -70,7 +70,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .v-navigation-drawer
 	width: 100%!important 
 	text-align: center
@@ -95,12 +95,12 @@ export default {
 		height: 80px
 		padding: 1rem
 
-.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled)
-	color: $base-gray !important
-	&:hover
-		color: $base-red
+	.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled)
+		color: $base-gray !important
+		&:hover
+			color: $base-red
 
-.theme--light.v-btn.v-btn--icon
-	color: $base-red	
+	.theme--light.v-btn.v-btn--icon
+		color: $base-red	
 
 </style>

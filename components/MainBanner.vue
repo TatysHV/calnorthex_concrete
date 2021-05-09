@@ -22,7 +22,7 @@ export default {
   },
 }
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
 .main-banner 
 	position: relative
 	display: flex 
@@ -31,6 +31,7 @@ export default {
 	align-items: center
 	width: 100% 
 	height: 70vh
+	max-height: 600px
 	animation: banner 20s infinite linear alternate
 	background-size: auto 100%
 	background-position: center
