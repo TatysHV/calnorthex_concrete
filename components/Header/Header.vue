@@ -206,7 +206,7 @@ export default {
 			//text-transform: uppercase
 
 	.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled)
-		color: $base-gray !important
+		color: $soft-black !important
 		&:hover 
 			color: $base-red !important
 

@@ -43,7 +43,7 @@ export default {
 		height: 100% 
 		top: 0
 		left: 0
-		background-color: rgb(40 0 0 / 45%)
+		background-color: rgb(0 0 0 / 45%)
 
 	.info-banner 
 		width: 100% 
