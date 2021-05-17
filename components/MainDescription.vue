@@ -54,23 +54,28 @@ export default {
 		min-height: 600px 
 		.bg-portrait
 			position: relative
-			width: 90%
-			height: 95%
+			width: 100%
+			height: 75vh
 			margin: auto
 			background: url('../assets/images/splash02.jpg')
 			background-size: cover 
 			background-position: center
 			z-index: 9
+			@include laptop
+				width: 95%
+				height: 97%
+
 		&:before
-			content:''
-			width: 90%
-			height: 95%
-			margin: auto
-			z-index: 1
-			position: absolute
-			background-color: $base-red 
-			right: 0px
-			bottom: 0px
+			@include laptop
+				content:''
+				width: 90%
+				height: 95%
+				margin: auto
+				z-index: 1
+				position: absolute
+				background-color: $base-red 
+				right: 0px
+				bottom: 0px
 			
 	.squares 
 		position: relative
