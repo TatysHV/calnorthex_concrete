@@ -72,6 +72,7 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.sass'],
+    treeShake: false, // Fix build problem of SassError: Expected tabs.
     theme: {
       dark: false,
       themes: {
