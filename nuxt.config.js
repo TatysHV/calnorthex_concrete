@@ -30,7 +30,13 @@ export default {
   mode: 'spa',
   target: 'static',
 
+  //******** SRC DIR FOR FIREBASE DEPLOY ***********/
+  srcDir: 'src',
+  buildDir: 'functions/.nuxt',
+  /************************************************/
+
   build: {
+    extractCSS: true, //Setting for firebase deploy
     babel: {
       presets({ envName }) {
         const envTargets = {

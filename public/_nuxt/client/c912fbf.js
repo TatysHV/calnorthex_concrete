@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{228:function(n,e,w){"use strict";w.r(e),e.default={onResize:function(){return{x:window.innerWidth,y:window.innerHeight}}}}}]);
